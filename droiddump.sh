@@ -35,5 +35,5 @@ PATHS=(
 
 for path in "${PATHS[@]}"
 do
-    rsync -e "ssh -p $PORT" -azvL --no-perms --no-times --size-only "$IP:$path" "$DESTINATION"
+    rsync -e "ssh -p $PORT" -azvL --no-perms --no-times --size-only --progress "$IP:$path" "$DESTINATION"
 done

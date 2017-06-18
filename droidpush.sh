@@ -22,4 +22,4 @@ while getopts "i:p:d:h" opt; do
     esac
 done
 
-rsync -e "ssh -p $PORT" -azvL --no-perms --no-times --size-only --delete "$1" "$IP:$DESTINATION"
+rsync -e "ssh -p $PORT" -azvL --no-perms --no-times --size-only --progress --delete "$1" "$IP:$DESTINATION"

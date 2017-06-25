@@ -21,5 +21,6 @@ while getopts "i:p:d:h" opt; do
             ;;
     esac
 done
+shift "$((OPTIND - 1))"
 
 rsync -e "ssh -p $PORT" -azvL --no-perms --no-times --size-only --progress --delete "$1" "$IP:$DESTINATION"
